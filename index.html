@@ -1,501 +1,485 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2822
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Event | Agence Evenementielle d'Excellence - Jacmel, Haiti</title>
+    <meta name="description" content="Aura Event est une agence specialisee dans l'ingenierie, la scenographie, le protocole et la gestion evenementielle haut de gamme a Jacmel, Haiti.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bordeaux: {
+                            700: '#721F30',
+                            800: '#581825',
+                            900: '#3D1018',
+                            950: '#26090E',
+                        },
+                        gold: {
+                            400: '#E5C158',
+                            500: '#D4AF37',
+                            600: '#AA8C2C',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],
+                        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-gold-500 selection:text-bordeaux-950">
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="fr" class="scroll-smooth">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>Aura Event | Agence \'c9v\'e9nementielle d'Excellence \'97 Jacmel, Ha\'efti</title>\
-    <meta name="description" content="Aura Event est une agence sp\'e9cialis\'e9e dans l'ing\'e9nierie, la sc\'e9nographie, le protocole et la gestion \'e9v\'e9nementielle haut de gamme \'e0 Jacmel, Ha\'efti.">\
-    <script src="https://cdn.tailwindcss.com"></script>\
-    <script>\
-        tailwind.config = \{\
-            theme: \{\
-                extend: \{\
-                    colors: \{\
-                        bordeaux: \{\
-                            700: '#721F30',\
-                            800: '#581825',\
-                            900: '#3D1018',\
-                            950: '#26090E',\
-                        \},\
-                        gold: \{\
-                            400: '#E5C158',\
-                            500: '#D4AF37',\
-                            600: '#AA8C2C',\
-                        \}\
-                    \},\
-                    fontFamily: \{\
-                        serif: ['Georgia', 'Cambria', 'Times New Roman', 'serif'],\
-                        sans: ['system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],\
-                    \}\
-                \}\
-            \}\
-        \}\
-    </script>\
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">\
-</head>\
-<body class="bg-gray-50 text-gray-800 font-sans antialiased selection:bg-gold-500 selection:text-bordeaux-950">\
-\
-    <!-- Navigation -->\
-    <header class="fixed top-0 left-0 right-0 z-50 bg-bordeaux-950/95 backdrop-blur-md border-b border-gold-500/20 text-white">\
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">\
-            <a href="#" class="flex items-center space-x-3 group">\
-                <div class="w-10 h-10 rounded-full border-2 border-gold-500 bg-bordeaux-900 flex items-center justify-center text-gold-500 font-serif font-bold text-xl group-hover:bg-gold-500 group-hover:text-bordeaux-950 transition">\
-                    AE\
-                </div>\
-                <span class="text-xl font-serif tracking-widest font-semibold">AURA <span class="text-gold-500">\'c9VENT</span></span>\
-            </a>\
-\
-            <!-- Menu Desktop -->\
-            <nav class="hidden lg:flex space-x-8 text-sm font-medium">\
-                <a href="#apropos" class="hover:text-gold-500 transition">\'c0 Propos</a>\
-                <a href="#services" class="hover:text-gold-500 transition">Services</a>\
-                <a href="#realisations" class="hover:text-gold-500 transition">R\'e9alisations</a>\
-                <a href="#methodologie" class="hover:text-gold-500 transition">M\'e9thodologie</a>\
-                <a href="#equipe" class="hover:text-gold-500 transition">\'c9quipe</a>\
-                <a href="#formules" class="hover:text-gold-500 transition">Formules</a>\
-            </nav>\
-\
-            <div class="flex items-center space-x-4">\
-                <a href="#contact" class="hidden sm:inline-block bg-gold-500 hover:bg-gold-400 text-bordeaux-950 font-bold px-5 py-2.5 rounded-full text-sm transition shadow-lg">\
-                    Confier un projet\
-                </a>\
-                <!-- Bouton Menu Mobile -->\
-                <button id="menu-btn" class="lg:hidden text-2xl text-gold-500 focus:outline-none" aria-label="Menu">\
-                    <i class="fa-solid fa-bars"></i>\
-                </button>\
-            </div>\
-        </div>\
-\
-        <!-- Menu Mobile D\'e9roulant -->\
-        <div id="mobile-menu" class="hidden lg:hidden bg-bordeaux-900 border-b border-gold-500/20 px-6 py-6 space-y-4 text-sm">\
-            <a href="#apropos" class="block hover:text-gold-500">\'c0 Propos</a>\
-            <a href="#services" class="block hover:text-gold-500">Services</a>\
-            <a href="#realisations" class="block hover:text-gold-500">R\'e9alisations</a>\
-            <a href="#methodologie" class="block hover:text-gold-500">M\'e9thodologie</a>\
-            <a href="#equipe" class="block hover:text-gold-500">\'c9quipe</a>\
-            <a href="#formules" class="block hover:text-gold-500">Formules</a>\
-            <a href="#contact" class="block text-center bg-gold-500 text-bordeaux-950 font-bold py-2.5 rounded-full">Contactez-nous</a>\
-        </div>\
-    </header>\
-\
-    <!-- Hero Section -->\
-    <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 bg-gradient-to-br from-bordeaux-950 via-bordeaux-900 to-bordeaux-800 text-white overflow-hidden">\
-        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>\
-        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">\
-            <span class="inline-block px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 text-xs font-semibold tracking-widest uppercase mb-6">\
-                Agence \'c9v\'e9nementielle \'95 Jacmel, Ha\'efti\
-            </span>\
-            <h1 class="text-4xl md:text-6xl font-serif font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-tight">\
-                Une expertise au service de <span class="text-gold-500">vos \'e9v\'e9nements</span>.\
-            </h1>\
-            <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 font-light italic">\
-                \'ab Avec Aura \'c9vent, vous ne faites pas qu'organiser un \'e9v\'e9nement : vous cr\'e9ez des souvenirs inoubliables et marquez les esprits. \'bb\
-            </p>\
-            <div class="flex flex-col sm:flex-row justify-center gap-4">\
-                <a href="#services" class="bg-gold-500 hover:bg-gold-400 text-bordeaux-950 font-bold px-8 py-4 rounded-xl shadow-xl transition">\
-                    D\'e9couvrir nos expertises\
-                </a>\
-                <a href="#contact" class="border border-white/30 hover:border-gold-500 hover:text-gold-400 text-white px-8 py-4 rounded-xl transition">\
-                    Demander un devis\
-                </a>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- \'c0 Propos -->\
-    <section id="apropos" class="py-24 bg-white">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <div class="text-center max-w-3xl mx-auto mb-16">\
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">\'c0 Propos d'Aura \'c9vent</h2>\
-                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>\
-                <p class="text-gray-600 text-lg leading-relaxed">\
-                    Aura \'c9vent est une agence sp\'e9cialis\'e9e dans l'ing\'e9nierie, la sc\'e9nographie et la gestion \'e9v\'e9nementielle. Nous combinons cr\'e9ativit\'e9, rigueur protocolaire et sens du d\'e9tail pour transformer chaque projet en un succ\'e8s \'e9clatant.\
-                </p>\
-            </div>\
-\
-            <div class="grid md:grid-cols-2 gap-8">\
-                <div class="p-8 rounded-2xl bg-gray-50 border-l-4 border-gold-500 shadow-sm">\
-                    <div class="flex items-center space-x-3 mb-4">\
-                        <i class="fa-solid fa-eye text-gold-600 text-xl"></i>\
-                        <h3 class="font-bold text-2xl font-serif text-bordeaux-900">Notre Vision</h3>\
-                    </div>\
-                    <p class="text-gray-600 leading-relaxed">\
-                        Faire rayonner la culture, l'\'e9ducation et les initiatives priv\'e9es \'e0 travers des exp\'e9riences marquantes, structur\'e9es et haut de gamme.\
-                    </p>\
-                </div>\
-\
-                <div class="p-8 rounded-2xl bg-gray-50 border-l-4 border-bordeaux-900 shadow-sm">\
-                    <div class="flex items-center space-x-3 mb-4">\
-                        <i class="fa-solid fa-bullseye text-bordeaux-900 text-xl"></i>\
-                        <h3 class="font-bold text-2xl font-serif text-bordeaux-900">Notre Mission</h3>\
-                    </div>\
-                    <p class="text-gray-600 leading-relaxed">\
-                        Offrir une prise en charge cl\'e9 en main, de la conception strat\'e9gique initiale jusqu'\'e0 la coordination logistique et protocolaire du jour J.\
-                    </p>\
-                </div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- Services & Expertises -->\
-    <section id="services" class="py-24 bg-gray-50">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <div class="text-center max-w-3xl mx-auto mb-16">\
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">Nos Services & Expertises</h2>\
-                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>\
-                <p class="text-gray-600 text-lg">Une prise en charge compl\'e8te pour vos \'e9v\'e9nements priv\'e9s, culturels et institutionnels.</p>\
-            </div>\
-\
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">\
-                <!-- Service 1 -->\
-                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-bordeaux-900">\
-                    <div class="w-12 h-12 rounded-xl bg-bordeaux-900/10 text-bordeaux-900 flex items-center justify-center text-xl mb-6">\
-                        <i class="fa-solid fa-champagne-glasses"></i>\
-                    </div>\
-                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">Organisation & Logistique</h3>\
-                    <ul class="text-gray-600 text-sm space-y-2">\
-                        <li>\'95 Mariages, anniversaires & r\'e9ceptions priv\'e9es</li>\
-                        <li>\'95 Conf\'e9rences, forums & lancements</li>\
-                        <li>\'95 Sc\'e9nographie, d\'e9coration & coordination</li>\
-                    </ul>\
-                </div>\
-\
-                <!-- Service 2 -->\
-                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-gold-500">\
-                    <div class="w-12 h-12 rounded-xl bg-gold-500/15 text-gold-600 flex items-center justify-center text-xl mb-6">\
-                        <i class="fa-solid fa-user-tie"></i>\
-                    </div>\
-                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">H\'f4tesses & Protocole</h3>\
-                    <ul class="text-gray-600 text-sm space-y-2">\
-                        <li>\'95 H\'f4tesses d'accueil VIP & mannequins</li>\
-                        <li>\'95 Contr\'f4le des acc\'e8s & placement</li>\
-                        <li>\'95 Service traiteur, serveurs & personnel</li>\
-                    </ul>\
-                </div>\
-\
-                <!-- Service 3 -->\
-                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-bordeaux-900">\
-                    <div class="w-12 h-12 rounded-xl bg-bordeaux-900/10 text-bordeaux-900 flex items-center justify-center text-xl mb-6">\
-                        <i class="fa-solid fa-camera-retro"></i>\
-                    </div>\
-                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">Communication & M\'e9dia</h3>\
-                    <ul class="text-gray-600 text-sm space-y-2">\
-                        <li>\'95 Branding \'e9v\'e9nementiel & badges</li>\
-                        <li>\'95 Couverture photo/vid\'e9o HD</li>\
-                        <li>\'95 Mise en valeur des sponsors & RP</li>\
-                    </ul>\
-                </div>\
-\
-                <!-- Service 4 -->\
-                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-gold-500">\
-                    <div class="w-12 h-12 rounded-xl bg-gold-500/15 text-gold-600 flex items-center justify-center text-xl mb-6">\
-                        <i class="fa-solid fa-graduation-cap"></i>\
-                    </div>\
-                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">Formation & Culture</h3>\
-                    <ul class="text-gray-600 text-sm space-y-2">\
-                        <li>\'95 Ateliers & renforcement de capacit\'e9s</li>\
-                        <li>\'95 Formation de personnel \'e9v\'e9nementiel</li>\
-                        <li>\'95 Activit\'e9s culturelles, \'e9ducatives & DJ</li>\
-                    </ul>\
-                </div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- R\'e9alisations / Bilan d'activit\'e9s -->\
-    <section id="realisations" class="py-24 bg-white">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <div class="text-center max-w-3xl mx-auto mb-16">\
-                <span class="text-gold-600 font-semibold text-xs uppercase tracking-widest">Portfolio & Impact</span>\
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mt-2 mb-4">Nos R\'e9alisations \'e0 Jacmel</h2>\
-                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>\
-                <p class="text-gray-600">Retour sur les \'e9v\'e9nements marquants orchestr\'e9s par notre \'e9quipe.</p>\
-            </div>\
-\
-            <div class="grid md:grid-cols-2 gap-8">\
-                <!-- \'c9v\'e9nement 1 -->\
-                <div class="rounded-3xl bg-gray-50 p-8 border border-gray-200 shadow-sm flex flex-col justify-between">\
-                    <div>\
-                        <div class="flex items-center justify-between text-xs font-semibold text-gold-600 uppercase tracking-wider mb-3">\
-                            <span>8 Mars 2026 \'95 Camp Nou, Jacmel</span>\
-                            <span class="bg-bordeaux-900 text-white px-3 py-1 rounded-full">1\'e8re \'c9dition</span>\
-                        </div>\
-                        <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-3">Beaut\'e9 avec But, Femme avec Impact</h3>\
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">\
-                            C\'e9l\'e9bration de la Journ\'e9e Internationale des Droits de la Femme r\'e9unissant plus de 50 participants autour d'une table ronde avec cinq femmes leaders, d'interm\'e8des artistiques live, d'une troupe th\'e9\'e2trale et d'un atelier d'empowerment.\
-                        </p>\
-                    </div>\
-                    <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">\
-                        <span><i class="fa-solid fa-users text-bordeaux-900 mr-1"></i> +50 participants & 12 b\'e9n\'e9voles</span>\
-                        <span><i class="fa-solid fa-check-circle text-green-600 mr-1"></i> Succ\'e8s officiel</span>\
-                    </div>\
-                </div>\
-\
-                <!-- \'c9v\'e9nement 2 -->\
-                <div class="rounded-3xl bg-gray-50 p-8 border border-gray-200 shadow-sm flex flex-col justify-between">\
-                    <div>\
-                        <div class="flex items-center justify-between text-xs font-semibold text-gold-600 uppercase tracking-wider mb-3">\
-                            <span>Avril 2026 \'95 Salle Hosanna & IUS, Jacmel</span>\
-                            <span class="bg-bordeaux-900 text-white px-3 py-1 rounded-full">Partenariat GNND</span>\
-                        </div>\
-                        <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-3">De l'Attitude \'e0 l'Altitude & Remise de Certificats</h3>\
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">\
-                            Formation intensive sur la confiance en soi et l'\'e9l\'e9gance sc\'e9nique anim\'e9e par An\'e9die Azael Doura (Miss Ha\'efti Univers 2011), suivie d'une c\'e9r\'e9monie protocolaire officielle de remise de certificats \'e0 47 r\'e9cipiendaires.\
-                        </p>\
-                    </div>\
-                    <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">\
-                        <span><i class="fa-solid fa-award text-gold-600 mr-1"></i> 47 participantes certifi\'e9es</span>\
-                        <span><i class="fa-solid fa-handshake text-bordeaux-900 mr-1"></i> Co-organisation Aura Event & GNND</span>\
-                    </div>\
-                </div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- M\'e9thodologie -->\
-    <section id="methodologie" class="py-24 bg-gray-50">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <div class="text-center max-w-3xl mx-auto mb-16">\
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">Notre M\'e9thodologie de Travail</h2>\
-                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>\
-            </div>\
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">\
-                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">\
-                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">01</span>\
-                    <h4 class="font-bold text-bordeaux-900 mb-2">Analyse & Conception</h4>\
-                    <p class="text-sm text-gray-600">D\'e9finition sur mesure des objectifs, du th\'e8me et du concept cr\'e9atif.</p>\
-                </div>\
-                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">\
-                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">02</span>\
-                    <h4 class="font-bold text-bordeaux-900 mb-2">Planification Strat\'e9gique</h4>\
-                    <p class="text-sm text-gray-600">Rigueur budg\'e9taire, r\'e9troplanning pr\'e9cis et coordination des prestataires.</p>\
-                </div>\
-                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">\
-                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">03</span>\
-                    <h4 class="font-bold text-bordeaux-900 mb-2">Ex\'e9cution d'Excellence</h4>\
-                    <p class="text-sm text-gray-600">Gestion terrain du jour J, accueil protocolaire et suivi continu.</p>\
-                </div>\
-                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">\
-                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">04</span>\
-                    <h4 class="font-bold text-bordeaux-900 mb-2">Mesure d'Impact</h4>\
-                    <p class="text-sm text-gray-600">\'c9valuation des r\'e9sultats, bilan d'activit\'e9 et retomb\'e9es m\'e9dias.</p>\
-                </div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- \'c9quipe / Organigramme -->\
-    <section id="equipe" class="py-24 bg-white">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <div class="text-center max-w-3xl mx-auto mb-16">\
-                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">Notre \'c9quipe Dirigeante</h2>\
-                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>\
-                <p class="text-gray-600">Des professionnels engag\'e9s pour piloter chaque aspect de vos \'e9v\'e9nements.</p>\
-            </div>\
-\
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">\
-                <div class="p-6 rounded-2xl bg-bordeaux-900 text-white text-center shadow-lg">\
-                    <p class="text-xs uppercase tracking-widest text-gold-400 font-semibold mb-1">Pr\'e9sidente</p>\
-                    <h4 class="text-lg font-bold">Dayna Jennifer Sylvain</h4>\
-                </div>\
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">\
-                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Directrice \'c9v\'e9nementielle</p>\
-                    <h4 class="text-lg font-bold text-bordeaux-900">Naama Laura Toussaint</h4>\
-                </div>\
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">\
-                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Responsable Technologies</p>\
-                    <h4 class="text-lg font-bold text-bordeaux-900">Budly Fontilus</h4>\
-                </div>\
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">\
-                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Secr\'e9taire G\'e9n\'e9rale</p>\
-                    <h4 class="text-lg font-bold text-bordeaux-900">Na\'efka</h4>\
-                </div>\
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">\
-                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Finances & Tr\'e9sorerie</p>\
-                    <h4 class="text-lg font-bold text-bordeaux-900">Christelle M. Jacquet</h4>\
-                </div>\
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">\
-                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Communication & Logistique</p>\
-                    <h4 class="text-lg font-bold text-bordeaux-900">Hernsy M. Jacques & Coffy M. Innocent</h4>\
-                </div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- Nos Formules -->\
-    <section id="formules" class="py-24 bg-bordeaux-950 text-white">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <div class="text-center max-w-3xl mx-auto mb-16">\
-                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Nos Formules & Offres Privil\'e8ges</h2>\
-                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>\
-                <p class="text-gray-300">Des solutions adapt\'e9es \'e0 vos ambitions et \'e0 l'envergure de votre r\'e9ception.</p>\
-            </div>\
-\
-            <div class="grid md:grid-cols-3 gap-8 items-stretch">\
-                <!-- Formule 1 -->\
-                <div class="bg-bordeaux-900 p-8 rounded-2xl border border-gold-500/20 flex flex-col justify-between">\
-                    <div>\
-                        <h3 class="text-2xl font-serif font-bold text-gold-400 mb-4">Formule Essentielle</h3>\
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6">\
-                            Conseil, planification strat\'e9gique et suivi d'accompagnement. Id\'e9ale pour les projets n\'e9cessitant un cadrage professionnel et une direction experte.\
-                        </p>\
-                    </div>\
-                    <a href="#contact" class="block text-center border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-bordeaux-950 font-bold py-3 rounded-xl transition">\
-                        Demander cette formule\
-                    </a>\
-                </div>\
-\
-                <!-- Formule 2 -->\
-                <div class="bg-white text-bordeaux-950 p-8 rounded-2xl shadow-2xl relative flex flex-col justify-between ring-4 ring-gold-500">\
-                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-bordeaux-950 text-xs font-extrabold uppercase tracking-wider px-4 py-1 rounded-full">\
-                        Cl\'e9 en main\
-                    </span>\
-                    <div>\
-                        <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-4">Formule Signature</h3>\
-                        <p class="text-gray-700 text-sm leading-relaxed mb-6">\
-                            <strong>Conception + D\'e9coration + Coordination + Personnel.</strong> Notre offre compl\'e8te pour un \'e9v\'e9nement sans compromis, g\'e9r\'e9 de A \'e0 Z par nos \'e9quipes.\
-                        </p>\
-                    </div>\
-                    <a href="#contact" class="block text-center bg-bordeaux-900 hover:bg-bordeaux-800 text-white font-bold py-3.5 rounded-xl transition shadow-md">\
-                        R\'e9server la Signature\
-                    </a>\
-                </div>\
-\
-                <!-- Formule 3 -->\
-                <div class="bg-bordeaux-900 p-8 rounded-2xl border border-gold-500/20 flex flex-col justify-between">\
-                    <div>\
-                        <h3 class="text-2xl font-serif font-bold text-gold-400 mb-4">Formule Sur-Mesure</h3>\
-                        <p class="text-gray-300 text-sm leading-relaxed mb-6">\
-                            Ing\'e9nierie \'e9v\'e9nementielle personnalis\'e9e pour projets d'envergure. Chaque d\'e9tail est con\'e7u selon vos exigences protocolaires et artistiques les plus \'e9lev\'e9es.\
-                        </p>\
-                    </div>\
-                    <a href="#contact" class="block text-center border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-bordeaux-950 font-bold py-3 rounded-xl transition">\
-                        \'c9tude personnalis\'e9e\
-                    </a>\
-                </div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- Contact -->\
-    <section id="contact" class="py-24 bg-white">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <div class="grid lg:grid-cols-2 gap-12 items-start">\
-                <div>\
-                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-6">Donnons Vie \'e0 vos Projets</h2>\
-                    <p class="text-gray-600 mb-8 leading-relaxed">\
-                        Confiez-nous votre vision, nous la transformerons en succ\'e8s \'e9clatant. Contactez-nous directement par t\'e9l\'e9phone, WhatsApp ou e-mail.\
-                    </p>\
-\
-                    <div class="space-y-5">\
-                        <div class="flex items-center space-x-4">\
-                            <div class="w-12 h-12 rounded-full bg-bordeaux-900 text-gold-400 flex items-center justify-center text-lg">\
-                                <i class="fa-solid fa-phone"></i>\
-                            </div>\
-                            <div>\
-                                <p class="text-xs text-gray-500 uppercase font-semibold">T\'e9l\'e9phone & WhatsApp</p>\
-                                <p class="font-bold text-gray-900">+509 31 33 2806 / +509 47 99 3315</p>\
-                            </div>\
-                        </div>\
-\
-                        <div class="flex items-center space-x-4">\
-                            <div class="w-12 h-12 rounded-full bg-bordeaux-900 text-gold-400 flex items-center justify-center text-lg">\
-                                <i class="fa-solid fa-envelope"></i>\
-                            </div>\
-                            <div>\
-                                <p class="text-xs text-gray-500 uppercase font-semibold">Adresse E-mail</p>\
-                                <a href="mailto:eventaura64@gmail.com" class="font-bold text-gray-900 hover:text-bordeaux-800">eventaura64@gmail.com</a>\
-                            </div>\
-                        </div>\
-\
-                        <div class="flex items-center space-x-4">\
-                            <div class="w-12 h-12 rounded-full bg-bordeaux-900 text-gold-400 flex items-center justify-center text-lg">\
-                                <i class="fa-solid fa-location-dot"></i>\
-                            </div>\
-                            <div>\
-                                <p class="text-xs text-gray-500 uppercase font-semibold">Si\'e8ge</p>\
-                                <p class="font-bold text-gray-900">Jacmel, Ha\'efti (Sur rendez-vous)</p>\
-                            </div>\
-                        </div>\
-                    </div>\
-\
-                    <div class="mt-8">\
-                        <a href="https://wa.me/50931332806?text=Bonjour%20Aura%20Event%2C%20je%20souhaite%20discuter%20d'un%20projet%20%C3%A9v%C3%A9nementiel." target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-3 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-md transition">\
-                            <i class="fa-brands fa-whatsapp text-xl"></i>\
-                            <span>Discuter sur WhatsApp</span>\
-                        </a>\
-                    </div>\
-                </div>\
-\
-                <!-- Formulaire -->\
-                <div class="bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm">\
-                    <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-6">Demande de renseignements</h3>\
-                    <form id="contact-form" class="space-y-4">\
-                        <div>\
-                            <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Nom complet / Organisation</label>\
-                            <input type="text" id="nom" required placeholder="Ex. Jean Dupont" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white">\
-                        </div>\
-                        <div class="grid sm:grid-cols-2 gap-4">\
-                            <div>\
-                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">T\'e9l\'e9phone</label>\
-                                <input type="tel" id="tel" required placeholder="+509 ..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white">\
-                            </div>\
-                            <div>\
-                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Formule souhait\'e9e</label>\
-                                <select id="formule" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white">\
-                                    <option value="Signature">Formule Signature</option>\
-                                    <option value="Essentielle">Formule Essentielle</option>\
-                                    <option value="Sur-Mesure">Formule Sur-Mesure</option>\
-                                </select>\
-                            </div>\
-                        </div>\
-                        <div>\
-                            <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">D\'e9tails de votre \'e9v\'e9nement</label>\
-                            <textarea id="message" rows="4" required placeholder="Date pr\'e9vue, type d'\'e9v\'e9nement, nombre d'invit\'e9s..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white"></textarea>\
-                        </div>\
-                        <button type="submit" class="w-full bg-bordeaux-900 hover:bg-bordeaux-800 text-white font-bold py-4 rounded-xl transition shadow-lg">\
-                            Envoyer via WhatsApp\
-                        </button>\
-                    </form>\
-                </div>\
-            </div>\
-        </div>\
-    </section>\
-\
-    <!-- Footer -->\
-    <footer class="bg-bordeaux-950 text-gray-400 py-10 border-t border-gold-500/20 text-center text-sm">\
-        <div class="max-w-7xl mx-auto px-6">\
-            <p class="font-serif text-white text-lg tracking-widest mb-2">AURA <span class="text-gold-500">\'c9VENT</span></p>\
-            <p class="mb-4">Une expertise au service de vos \'e9v\'e9nements \'97 Jacmel, Ha\'efti</p>\
-            <p class="text-xs text-gray-500">&copy; 2026 Aura Event (auraevent.pro). Tous droits r\'e9serv\'e9s.</p>\
-        </div>\
-    </footer>\
-\
-    <!-- Scripts l\'e9gers (Menu Mobile + Redirection WhatsApp du formulaire) -->\
-    <script>\
-        const menuBtn = document.getElementById('menu-btn');\
-        const mobileMenu = document.getElementById('mobile-menu');\
-        menuBtn.addEventListener('click', () => \{\
-            mobileMenu.classList.toggle('hidden');\
-        \});\
-\
-        document.getElementById('contact-form').addEventListener('submit', function(e) \{\
-            e.preventDefault();\
-            const nom = document.getElementById('nom').value;\
-            const tel = document.getElementById('tel').value;\
-            const formule = document.getElementById('formule').value;\
-            const message = document.getElementById('message').value;\
-\
-            const texte = `Bonjour Aura Event,%0A%0A*Nom :* $\{encodeURIComponent(nom)\}%0A*T\'e9l\'e9phone :* $\{encodeURIComponent(tel)\}%0A*Formule :* $\{encodeURIComponent(formule)\}%0A*Projet :* $\{encodeURIComponent(message)\}`;\
-            window.open(`https://wa.me/50931332806?text=$\{texte\}`, '_blank');\
-        \});\
-    </script>\
-</body>\
-</html> }
+    <!-- Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-bordeaux-950/95 backdrop-blur-md border-b border-gold-500/20 text-white">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-full border-2 border-gold-500 bg-bordeaux-900 flex items-center justify-center text-gold-500 font-serif font-bold text-xl group-hover:bg-gold-500 group-hover:text-bordeaux-950 transition">
+                    AE
+                </div>
+                <span class="text-xl font-serif tracking-widest font-semibold">AURA <span class="text-gold-500">EVENT</span></span>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden lg:flex space-x-8 text-sm font-medium">
+                <a href="#apropos" class="hover:text-gold-500 transition">A Propos</a>
+                <a href="#services" class="hover:text-gold-500 transition">Services</a>
+                <a href="#realisations" class="hover:text-gold-500 transition">Realisations</a>
+                <a href="#methodologie" class="hover:text-gold-500 transition">Methodologie</a>
+                <a href="#equipe" class="hover:text-gold-500 transition">Equipe</a>
+                <a href="#formules" class="hover:text-gold-500 transition">Formules</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-block bg-gold-500 hover:bg-gold-400 text-bordeaux-950 font-bold px-5 py-2.5 rounded-full text-sm transition shadow-lg">
+                    Confier un projet
+                </a>
+                <!-- Bouton Menu Mobile -->
+                <button id="menu-btn" class="lg:hidden text-2xl text-gold-500 focus:outline-none" aria-label="Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Deroulant -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-bordeaux-900 border-b border-gold-500/20 px-6 py-6 space-y-4 text-sm">
+            <a href="#apropos" class="block hover:text-gold-500">A Propos</a>
+            <a href="#services" class="block hover:text-gold-500">Services</a>
+            <a href="#realisations" class="block hover:text-gold-500">Realisations</a>
+            <a href="#methodologie" class="block hover:text-gold-500">Methodologie</a>
+            <a href="#equipe" class="block hover:text-gold-500">Equipe</a>
+            <a href="#formules" class="block hover:text-gold-500">Formules</a>
+            <a href="#contact" class="block text-center bg-gold-500 text-bordeaux-950 font-bold py-2.5 rounded-full">Contactez-nous</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-36 pb-24 md:pt-48 md:pb-36 bg-gradient-to-br from-bordeaux-950 via-bordeaux-900 to-bordeaux-800 text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/40 text-gold-400 text-xs font-semibold tracking-widest uppercase mb-6">
+                Agence Evenementielle - Jacmel, Haiti
+            </span>
+            <h1 class="text-4xl md:text-6xl font-serif font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+                Une expertise au service de <span class="text-gold-500">vos evenements</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 max-w-3xl mx-auto mb-10 font-light italic">
+                « Avec Aura Event, vous ne faites pas qu'organiser un evenement : vous creez des souvenirs inoubliables et marquez les esprits. »
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="bg-gold-500 hover:bg-gold-400 text-bordeaux-950 font-bold px-8 py-4 rounded-xl shadow-xl transition">
+                    Decouvrir nos expertises
+                </a>
+                <a href="#contact" class="border border-white/30 hover:border-gold-500 hover:text-gold-400 text-white px-8 py-4 rounded-xl transition">
+                    Demander un devis
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- A Propos -->
+    <section id="apropos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">A Propos d'Aura Event</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg leading-relaxed">
+                    Aura Event est une agence specialisee dans l'ingenierie, la scenographie et la gestion evenementielle. Nous combinons creativite, rigueur protocolaire et sens du detail pour transformer chaque projet en un succes eclatant.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-8 rounded-2xl bg-gray-50 border-l-4 border-gold-500 shadow-sm">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fa-solid fa-eye text-gold-600 text-xl"></i>
+                        <h3 class="font-bold text-2xl font-serif text-bordeaux-900">Notre Vision</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Faire rayonner la culture, l'education et les initiatives privees a travers des experiences marquantes, structurees et haut de gamme.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-2xl bg-gray-50 border-l-4 border-bordeaux-900 shadow-sm">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <i class="fa-solid fa-bullseye text-bordeaux-900 text-xl"></i>
+                        <h3 class="font-bold text-2xl font-serif text-bordeaux-900">Notre Mission</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        Offrir une prise en charge cle en main, de la conception strategique initiale jusqu'a la coordination logistique et protocolaire du jour J.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services & Expertises -->
+    <section id="services" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">Nos Services & Expertises</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-gray-600 text-lg">Une prise en charge complete pour vos evenements prives, culturels et institutionnels.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-bordeaux-900">
+                    <div class="w-12 h-12 rounded-xl bg-bordeaux-900/10 text-bordeaux-900 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">Organisation & Logistique</h3>
+                    <ul class="text-gray-600 text-sm space-y-2">
+                        <li>• Mariages, anniversaires & receptions privees</li>
+                        <li>• Conferences, forums & lancements</li>
+                        <li>• Scenographie, decoration & coordination</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-gold-500">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/15 text-gold-600 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">Hotesses & Protocole</h3>
+                    <ul class="text-gray-600 text-sm space-y-2">
+                        <li>• Hotesses d'accueil VIP & mannequins</li>
+                        <li>• Controle des acces & placement</li>
+                        <li>• Service traiteur, serveurs & personnel</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-bordeaux-900">
+                    <div class="w-12 h-12 rounded-xl bg-bordeaux-900/10 text-bordeaux-900 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">Communication & Media</h3>
+                    <ul class="text-gray-600 text-sm space-y-2">
+                        <li>• Branding evenementiel & badges</li>
+                        <li>• Couverture photo/video HD</li>
+                        <li>• Mise en valeur des sponsors & RP</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition border-t-4 border-gold-500">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/15 text-gold-600 flex items-center justify-center text-xl mb-6">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-bordeaux-900 mb-3">Formation & Culture</h3>
+                    <ul class="text-gray-600 text-sm space-y-2">
+                        <li>• Ateliers & renforcement de capacites</li>
+                        <li>• Formation de personnel evenementiel</li>
+                        <li>• Activites culturelles, educatives & DJ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Realisations -->
+    <section id="realisations" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold-600 font-semibold text-xs uppercase tracking-widest">Portfolio & Impact</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mt-2 mb-4">Nos Realisations a Jacmel</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-gray-600">Retour sur les evenements marquants orchestres par notre equipe.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="rounded-3xl bg-gray-50 p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gold-600 uppercase tracking-wider mb-3">
+                            <span>8 Mars 2026 • Camp Nou, Jacmel</span>
+                            <span class="bg-bordeaux-900 text-white px-3 py-1 rounded-full">1ere Edition</span>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-3">Beaute avec But, Femme avec Impact</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Celebration de la Journee Internationale des Droits de la Femme reunissant plus de 50 participants autour d'une table ronde avec cinq femmes leaders, d'intermedes artistiques live, d'une troupe theatrale et d'un atelier d'empowerment.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
+                        <span><i class="fa-solid fa-users text-bordeaux-900 mr-1"></i> +50 participants & 12 benevoles</span>
+                        <span><i class="fa-solid fa-check-circle text-green-600 mr-1"></i> Succes officiel</span>
+                    </div>
+                </div>
+
+                <div class="rounded-3xl bg-gray-50 p-8 border border-gray-200 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs font-semibold text-gold-600 uppercase tracking-wider mb-3">
+                            <span>Avril 2026 • Salle Hosanna & IUS, Jacmel</span>
+                            <span class="bg-bordeaux-900 text-white px-3 py-1 rounded-full">Partenariat GNND</span>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-3">De l'Attitude a l'Altitude & Remise de Certificats</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            Formation intensive sur la confiance en soi et l'elégance scenique animee par Anedie Azael Doura (Miss Haiti Univers 2011), suivie d'une ceremonie protocolaire officielle de remise de certificats a 47 recipiendaires.
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-gray-200 flex items-center justify-between text-xs text-gray-500">
+                        <span><i class="fa-solid fa-award text-gold-600 mr-1"></i> 47 participantes certifiees</span>
+                        <span><i class="fa-solid fa-handshake text-bordeaux-900 mr-1"></i> Co-organisation Aura Event & GNND</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodologie -->
+    <section id="methodologie" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">Notre Methodologie de Travail</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">01</span>
+                    <h4 class="font-bold text-bordeaux-900 mb-2">Analyse & Conception</h4>
+                    <p class="text-sm text-gray-600">Definition sur mesure des objectifs, du theme et du concept creatif.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">02</span>
+                    <h4 class="font-bold text-bordeaux-900 mb-2">Planification Strategique</h4>
+                    <p class="text-sm text-gray-600">Rigueur budgetaire, retroplanning precis et coordination des prestataires.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">03</span>
+                    <h4 class="font-bold text-bordeaux-900 mb-2">Execution d'Excellence</h4>
+                    <p class="text-sm text-gray-600">Gestion terrain du jour J, accueil protocolaire et suivi continu.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm text-center">
+                    <span class="text-4xl font-serif font-bold text-gold-500 mb-3 block">04</span>
+                    <h4 class="font-bold text-bordeaux-900 mb-2">Mesure d'Impact</h4>
+                    <p class="text-sm text-gray-600">Evaluation des resultats, bilan d'activite et retombees medias.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipe -->
+    <section id="equipe" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-4">Notre Equipe Dirigeante</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-gray-600">Des professionnels engages pour piloter chaque aspect de vos evenements.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="p-6 rounded-2xl bg-bordeaux-900 text-white text-center shadow-lg">
+                    <p class="text-xs uppercase tracking-widest text-gold-400 font-semibold mb-1">Presidente</p>
+                    <h4 class="text-lg font-bold">Dayna Jennifer Sylvain</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">
+                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Directrice Evenementielle</p>
+                    <h4 class="text-lg font-bold text-bordeaux-900">Naama Laura Toussaint</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">
+                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Responsable Technologies</p>
+                    <h4 class="text-lg font-bold text-bordeaux-900">Budly Fontilus</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">
+                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Secretaire Generale</p>
+                    <h4 class="text-lg font-bold text-bordeaux-900">Naika</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">
+                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Finances & Tresorerie</p>
+                    <h4 class="text-lg font-bold text-bordeaux-900">Christelle M. Jacquet</h4>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-200 text-center">
+                    <p class="text-xs uppercase tracking-widest text-gold-600 font-semibold mb-1">Communication & Logistique</p>
+                    <h4 class="text-lg font-bold text-bordeaux-900">Hernsy M. Jacques & Coffy M. Innocent</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formules -->
+    <section id="formules" class="py-24 bg-bordeaux-950 text-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-4">Nos Formules & Offres Privileges</h2>
+                <div class="w-20 h-1 bg-gold-500 mx-auto mb-6"></div>
+                <p class="text-gray-300">Des solutions adaptees a vos ambitions et a l'envergure de votre reception.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 items-stretch">
+                <div class="bg-bordeaux-900 p-8 rounded-2xl border border-gold-500/20 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-gold-400 mb-4">Formule Essentielle</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            Conseil, planification strategique et suivi d'accompagnement. Ideale pour les projets necessitant un cadrage professionnel et une direction experte.
+                        </p>
+                    </div>
+                    <a href="#contact" class="block text-center border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-bordeaux-950 font-bold py-3 rounded-xl transition">
+                        Demander cette formule
+                    </a>
+                </div>
+
+                <div class="bg-white text-bordeaux-950 p-8 rounded-2xl shadow-2xl relative flex flex-col justify-between ring-4 ring-gold-500">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gold-500 text-bordeaux-950 text-xs font-extrabold uppercase tracking-wider px-4 py-1 rounded-full">
+                        Cle en main
+                    </span>
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-4">Formule Signature</h3>
+                        <p class="text-gray-700 text-sm leading-relaxed mb-6">
+                            <strong>Conception + Decoration + Coordination + Personnel.</strong> Notre offre complete pour un evenement sans compromis, gere de A a Z par nos equipes.
+                        </p>
+                    </div>
+                    <a href="#contact" class="block text-center bg-bordeaux-900 hover:bg-bordeaux-800 text-white font-bold py-3.5 rounded-xl transition shadow-md">
+                        Reserver la Signature
+                    </a>
+                </div>
+
+                <div class="bg-bordeaux-900 p-8 rounded-2xl border border-gold-500/20 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-gold-400 mb-4">Formule Sur-Mesure</h3>
+                        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+                            Ingenierie evenementielle personnalisee pour projets d'envergure. Chaque detail est concu selon vos exigences protocolaires et artistiques les plus elevees.
+                        </p>
+                    </div>
+                    <a href="#contact" class="block text-center border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-bordeaux-950 font-bold py-3 rounded-xl transition">
+                        Etude personnalisee
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-bordeaux-900 mb-6">Donnons Vie a vos Projets</h2>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Confiez-nous votre vision, nous la transformerons en succes eclatant. Contactez-nous directement par telephone, WhatsApp ou e-mail.
+                    </p>
+
+                    <div class="space-y-5">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-bordeaux-900 text-gold-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-semibold">Telephone & WhatsApp</p>
+                                <p class="font-bold text-gray-900">+509 31 33 2806 / +509 47 99 3315</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-bordeaux-900 text-gold-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-semibold">Adresse E-mail</p>
+                                <a href="mailto:eventaura64@gmail.com" class="font-bold text-gray-900 hover:text-bordeaux-800">eventaura64@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-full bg-bordeaux-900 text-gold-400 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-500 uppercase font-semibold">Siege</p>
+                                <p class="font-bold text-gray-900">Jacmel, Haiti (Sur rendez-vous)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="https://wa.me/50931332806?text=Bonjour%20Aura%20Event%2C%20je%20souhaite%20discuter%20d'un%20projet%20%C3%A9v%C3%A9nementiel." target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-3 bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-3.5 rounded-xl shadow-md transition">
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                            <span>Discuter sur WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Formulaire -->
+                <div class="bg-gray-50 p-8 md:p-10 rounded-3xl border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-serif font-bold text-bordeaux-900 mb-6">Demande de renseignements</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Nom complet / Organisation</label>
+                            <input type="text" id="nom" required placeholder="Ex. Jean Dupont" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white">
+                        </div>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Telephone</label>
+                                <input type="tel" id="tel" required placeholder="+509 ..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Formule souhaitee</label>
+                                <select id="formule" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white">
+                                    <option value="Signature">Formule Signature</option>
+                                    <option value="Essentielle">Formule Essentielle</option>
+                                    <option value="Sur-Mesure">Formule Sur-Mesure</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-gray-600 mb-1.5">Details de votre evenement</label>
+                            <textarea id="message" rows="4" required placeholder="Date prevue, type d'evenement, nombre d'invites..." class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:border-bordeaux-900 bg-white"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-bordeaux-900 hover:bg-bordeaux-800 text-white font-bold py-4 rounded-xl transition shadow-lg">
+                            Envoyer via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bordeaux-950 text-gray-400 py-10 border-t border-gold-500/20 text-center text-sm">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="font-serif text-white text-lg tracking-widest mb-2">AURA <span class="text-gold-500">EVENT</span></p>
+            <p class="mb-4">Une expertise au service de vos evenements - Jacmel, Haiti</p>
+            <p class="text-xs text-gray-500">&copy; 2026 Aura Event (auraevent.pro). Tous droits reserves.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nom = document.getElementById('nom').value;
+            const tel = document.getElementById('tel').value;
+            const formule = document.getElementById('formule').value;
+            const message = document.getElementById('message').value;
+
+            const texte = `Bonjour Aura Event,%0A%0A*Nom :* ${encodeURIComponent(nom)}%0A*Telephone :* ${encodeURIComponent(tel)}%0A*Formule :* ${encodeURIComponent(formule)}%0A*Projet :* ${encodeURIComponent(message)}`;
+            window.open(`https://wa.me/50931332806?text=${texte}`, '_blank');
+        });
+    </script>
+</body>
+</html>

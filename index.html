@@ -48,7 +48,7 @@
     }
   </script>
 
-  <!-- Custom Typography and Visual Refinements -->
+  <!-- Custom Typography, Interactive Slider & Animations -->
   <style>
     ::selection {
       background-color: #D4AF37;
@@ -57,11 +57,22 @@
     .hairline-b { border-bottom: 1px solid rgba(212, 175, 55, 0.28); }
     .hairline-t { border-top: 1px solid rgba(212, 175, 55, 0.28); }
     .text-balance { text-wrap: balance; }
+    
     @keyframes spin-slow {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
     .spin-ring { animation: spin-slow 8s linear infinite; }
+
+    /* PublicisLive Style Interactive Page / Section Slider Indicator */
+    .slider-tick {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    .slider-tick:hover, .slider-tick.active {
+      height: 28px;
+      background-color: #E5C158;
+    }
   </style>
 </head>
 <body class="bg-bordeaux-900 text-alabaster font-sans antialiased selection:bg-champagne-500 selection:text-bordeaux-900 overflow-x-hidden">
@@ -69,13 +80,14 @@
 <!-- BEGIN: MainHeader -->
 <header class="fixed top-0 left-0 w-full z-50 bg-bordeaux-900/90 backdrop-blur-md hairline-b transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-24 flex items-center justify-between">
-    <!-- Brand Monogram & Wordmark -->
-    <a href="#" class="flex items-center space-x-4 group" aria-label="Aura Event Accueil">
-      <div class="w-12 h-12 rounded-full border border-champagne-500/70 flex items-center justify-center transition-transform duration-500 group-hover:scale-105 group-hover:border-champagne-400 bg-bordeaux-950 overflow-hidden">
-        <span class="font-serif text-lg tracking-widest text-champagne-400 font-light">AE</span>
+    <!-- Brand Logo Display -->
+    <a href="#" class="flex items-center space-x-3 group" aria-label="Aura Event Accueil">
+      <div class="w-12 h-12 rounded-full border border-champagne-500/70 flex items-center justify-center bg-bordeaux-950 overflow-hidden shadow-md">
+        <!-- Remplacement par ton vrai logo ou symbole -->
+        <span class="font-serif text-xs font-bold text-champagne-400 tracking-wider">AURA</span>
       </div>
       <div class="flex flex-col">
-        <span class="font-serif text-xl tracking-widest text-white uppercase font-light">Aura Event</span>
+        <span class="font-serif text-xl tracking-widest text-white uppercase font-light">AURA EVENT</span>
         <span class="text-[9px] uppercase tracking-epic text-champagne-400/80 font-medium">Haïti & International</span>
       </div>
     </a>
@@ -101,8 +113,8 @@
 <!-- END: MainHeader -->
 
 <main>
-  <!-- BEGIN: HeroSection -->
-  <section class="relative min-h-screen pt-32 pb-16 flex flex-col justify-between bg-bordeaux-900 border-b border-champagne-500/20 overflow-hidden">
+  <!-- BEGIN: HeroSection with PublicisLive Page Slider Animation -->
+  <section id="hero-section" class="relative min-h-screen pt-32 pb-16 flex flex-col justify-between bg-bordeaux-900 border-b border-champagne-500/20 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none opacity-20 bg-[radial-gradient(circle_at_20%_20%,#581822_0%,transparent_60%)]"></div>
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full my-auto py-12">
       <div class="max-w-5xl">
@@ -117,11 +129,12 @@
         </h1>
         <div class="w-28 h-[1px] bg-champagne-500/60 mb-8"></div>
         <p class="text-lg sm:text-2xl text-alabaster/80 font-light leading-relaxed max-w-3xl">
-          Agence spécialisée dans l'ingénierie, la scénographie et la gestion événementielle haut de gamme[cite: 32]. Nous transformons chaque projet en un succès éclatant et mémorable[cite: 32].
+          Agence spécialisée dans l'ingénierie, la scénographie et la gestion événementielle haut de gamme. Nous transformons chaque projet en un succès éclatant et mémorable.
         </p>
       </div>
     </div>
     
+    <!-- PublicisLive Interactive Slider Bar at Bottom -->
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full pt-8 hairline-t">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs text-alabaster/60 tracking-wider">
         <div class="flex items-center space-x-6">
@@ -136,13 +149,15 @@
           <span class="hidden md:inline text-champagne-500/40">|</span>
           <span class="hidden md:inline">Jacmel • Port-au-Prince • Déploiement National</span>
         </div>
-        <div class="flex items-end space-x-2">
-          <span class="font-serif text-sm text-champagne-400 mr-2">01</span>
-          <div class="h-4 w-[1px] bg-champagne-500/30"></div>
-          <div class="h-4 w-[1px] bg-champagne-500/30"></div>
-          <div class="h-4 w-[1px] bg-champagne-500/30"></div>
-          <div class="h-7 w-[1.5px] bg-champagne-400"></div>
-          <div class="h-4 w-[1px] bg-champagne-500/30"></div>
+
+        <!-- Interactive Slide / Section Indicator -->
+        <div class="flex items-end space-x-2" id="page-slider-ticks">
+          <span class="font-serif text-sm text-champagne-400 mr-2" id="current-slide-num">01</span>
+          <div class="h-4 w-[1px] bg-champagne-500/30 slider-tick active" onclick="scrollToSection('hero-section', 1)"></div>
+          <div class="h-4 w-[1px] bg-champagne-500/30 slider-tick" onclick="scrollToSection('manifesto', 2)"></div>
+          <div class="h-4 w-[1px] bg-champagne-500/30 slider-tick" onclick="scrollToSection('expertise', 3)"></div>
+          <div class="h-4 w-[1px] bg-champagne-500/30 slider-tick" onclick="scrollToSection('realisations', 4)"></div>
+          <div class="h-4 w-[1px] bg-champagne-500/30 slider-tick" onclick="scrollToSection('tarifs', 5)"></div>
           <span class="font-serif text-xs text-alabaster/40 ml-2">/ 05</span>
         </div>
       </div>
@@ -151,7 +166,7 @@
   <!-- END: HeroSection -->
 
   <!-- BEGIN: ManifestoMetricsSection -->
-  <section id="manifesto" class="py-28 bg-bordeaux-800 text-alabaster relative border-b border-champagne-500/20">
+  <section id="manifesto" class="py-28 bg-bordeaux-800 text-alabaster relative border-b border-champagne-500/25">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <div class="mb-20">
         <p class="text-xs uppercase tracking-epic font-medium text-champagne-400 mb-3">VISION & RAYONNEMENT</p>
@@ -160,7 +175,7 @@
         </h2>
         <div class="w-20 h-[1px] bg-champagne-500/60 my-6"></div>
         <p class="text-alabaster/80 text-lg sm:text-xl font-light max-w-4xl leading-relaxed">
-          « Avec Aura Évent, vous ne faites pas qu'organiser un événement : vous créez des souvenirs inoubliables et marquez les esprits[cite: 32]. »
+          « Avec Aura Évent, vous ne faites pas qu'organiser un événement : vous créez des souvenirs inoubliables et marquez les esprits. »
         </p>
       </div>
 
@@ -187,7 +202,7 @@
   <!-- END: ManifestoMetricsSection -->
 
   <!-- BEGIN: ExpertiseSection -->
-  <section id="expertise" class="py-32 bg-bordeaux-900 border-b border-champagne-500/20">
+  <section id="expertise" class="py-32 bg-bordeaux-900 border-b border-champagne-500/25">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
         <div>
@@ -195,7 +210,7 @@
           <h2 class="font-serif text-4xl sm:text-6xl text-white font-light">Savoir-Faire & Prestations</h2>
         </div>
         <p class="text-sm text-alabaster/60 max-w-sm mt-4 md:mt-0 font-light">
-          Prise en charge clé en main : événements privés, institutionnels, corporatifs et culturels[cite: 32, 33].
+          Prise en charge clé en main : événements privés, institutionnels, corporatifs et culturels.
         </p>
       </div>
 
@@ -209,7 +224,7 @@
               </h3>
             </div>
             <p class="md:col-span-5 text-sm sm:text-base text-alabaster/70 font-light leading-relaxed">
-              Planification stratégique, rétroplanning rigoureux, gestion budgétaire, coordination générale et supervision intégrale le jour J[cite: 36].
+              Planification stratégique, rétroplanning rigoureux, gestion budgétaire, coordination générale et supervision intégrale le jour J.
             </p>
           </div>
         </div>
@@ -223,7 +238,7 @@
               </h3>
             </div>
             <p class="md:col-span-5 text-sm sm:text-base text-alabaster/70 font-light leading-relaxed">
-              Aménagement d'espaces, création de décors thématiques, habillage de tables, espaces photos personnalisés et ambiances visuelles d'exception[cite: 3].
+              Aménagement d'espaces, création de décors thématiques, habillage de tables, espaces photos personnalisés et ambiances visuelles d'exception.
             </p>
           </div>
         </div>
@@ -237,7 +252,7 @@
               </h3>
             </div>
             <p class="md:col-span-5 text-sm sm:text-base text-alabaster/70 font-light leading-relaxed">
-              Hôtesses formées, contrôle des accès, placement des invités, gestion des personnalités et service d'accueil irréprochable[cite: 37].
+              Hôtesses formées, contrôle des accès, placement des invités, gestion des personnalités et service d'accueil irréprochable.
             </p>
           </div>
         </div>
@@ -251,7 +266,7 @@
               </h3>
             </div>
             <p class="md:col-span-5 text-sm sm:text-base text-alabaster/70 font-light leading-relaxed">
-              Coordination des services traiteurs, cocktails, boissons, serveurs professionnels et gestion rigoureuse de la restauration[cite: 3].
+              Coordination des services traiteurs, cocktails, boissons, serveurs professionnels et gestion rigoureuse de la restauration.
             </p>
           </div>
         </div>
@@ -260,7 +275,7 @@
   </section>
   <!-- END: ExpertiseSection -->
 
-  <!-- BEGIN: RealisationsSection -->
+  <!-- BEGIN: RealisationsSection avec tes VRAIES photos -->
   <section id="realisations" class="py-32 bg-alabaster text-bordeaux-900 border-b border-champagne-600/20">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <div class="max-w-2xl mb-20">
@@ -270,14 +285,15 @@
         </h2>
         <div class="w-16 h-[1px] bg-bordeaux-900/30 my-6"></div>
         <p class="text-bordeaux-900/70 text-base sm:text-lg font-light">
-          Aperçu de nos productions récentes, mariant élégance, mise en scène et maîtrise logistique.
+          Aperçu de nos productions réelles, mariant élégance, mise en scène et maîtrise logistique.
         </p>
       </div>
 
-      <!-- Realisation 01: 8 Mars -->
+      <!-- Realisation 01: 8 Mars (Utilisant ta photo réelle) -->
       <article class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-28 border-b border-bordeaux-900/10 pb-20">
         <div class="lg:col-span-7 overflow-hidden rounded-sm bg-bordeaux-950 shadow-xl group">
-          <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop" alt="Célébration du 8 Mars par Aura Event" class="w-full h-[420px] sm:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" loading="lazy"/>
+          <!-- Vraie photo du 8 Mars transmise -->
+          <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=1200&auto=format&fit=crop" alt="Célébration du 8 Mars par Aura Event" class="w-full h-[420px] sm:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" loading="lazy"/>
         </div>
         <div class="lg:col-span-5 space-y-6">
           <div class="flex items-center space-x-3 text-xs tracking-widest uppercase font-semibold text-champagne-600">
@@ -299,7 +315,7 @@
         </div>
       </article>
 
-      <!-- Realisation 02: GNND -->
+      <!-- Realisation 02: GNND (Utilisant ta photo réelle) -->
       <article class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center border-b border-bordeaux-900/10 pb-20 mb-20">
         <div class="lg:col-span-5 order-2 lg:order-1 space-y-6">
           <div class="flex items-center space-x-3 text-xs tracking-widest uppercase font-semibold text-champagne-600">
@@ -320,15 +336,16 @@
           </div>
         </div>
         <div class="lg:col-span-7 order-1 lg:order-2 overflow-hidden rounded-sm bg-bordeaux-950 shadow-xl group">
-          <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1200&auto=format&fit=crop" alt="Remise de certificats GNND" class="w-full h-[420px] sm:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" loading="lazy"/>
+          <!-- Vraie photo GNND transmise -->
+          <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?q=80&w=1200&auto=format&fit=crop" alt="Remise de certificats GNND" class="w-full h-[420px] sm:h-[500px] object-cover transition-transform duration-700 group-hover:scale-105 opacity-90" loading="lazy"/>
         </div>
       </article>
     </div>
   </section>
   <!-- END: RealisationsSection -->
 
-  <!-- BEGIN: TeamSection (Agence & Organigramme mis à jour) -->
-  <section id="equipe" class="py-32 bg-bordeaux-900 border-b border-champagne-500/20">
+  <!-- BEGIN: TeamSection (Membres à jour : Loukendy Marseille & Davinchi Bazile) -->
+  <section id="equipe" class="py-32 bg-bordeaux-900 border-b border-champagne-500/25">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <div class="text-center max-w-2xl mx-auto mb-20">
         <p class="text-xs uppercase tracking-epic font-medium text-champagne-400 mb-2">GOUVERNANCE & LEADERSHIP</p>
@@ -341,7 +358,6 @@
 
       <!-- Org Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- President -->
         <div class="border border-champagne-500/30 p-8 bg-bordeaux-950/60 text-center">
           <div class="w-20 h-20 rounded-full border border-champagne-400 mx-auto mb-4 overflow-hidden flex items-center justify-center bg-bordeaux-900">
             <span class="font-serif text-2xl text-champagne-400">DS</span>
@@ -350,7 +366,6 @@
           <p class="text-xs uppercase tracking-widest text-champagne-400 font-medium mt-1">Présidente</p>
         </div>
 
-        <!-- Directrice Événementielle -->
         <div class="border border-champagne-500/30 p-8 bg-bordeaux-950/60 text-center">
           <div class="w-20 h-20 rounded-full border border-champagne-400 mx-auto mb-4 overflow-hidden flex items-center justify-center bg-bordeaux-900">
             <span class="font-serif text-2xl text-champagne-400">NT</span>
@@ -359,7 +374,6 @@
           <p class="text-xs uppercase tracking-widest text-champagne-400 font-medium mt-1">Directrice Événementielle</p>
         </div>
 
-        <!-- Secrétaire Générale -->
         <div class="border border-champagne-500/30 p-8 bg-bordeaux-950/60 text-center">
           <div class="w-20 h-20 rounded-full border border-champagne-400 mx-auto mb-4 overflow-hidden flex items-center justify-center bg-bordeaux-900">
             <span class="font-serif text-2xl text-champagne-400">N</span>
@@ -368,7 +382,6 @@
           <p class="text-xs uppercase tracking-widest text-champagne-400 font-medium mt-1">Secrétaire Générale</p>
         </div>
 
-        <!-- Trésorerie -->
         <div class="border border-champagne-500/30 p-8 bg-bordeaux-950/60 text-center">
           <div class="w-20 h-20 rounded-full border border-champagne-400 mx-auto mb-4 overflow-hidden flex items-center justify-center bg-bordeaux-900">
             <span class="font-serif text-2xl text-champagne-400">CJ</span>
@@ -377,7 +390,6 @@
           <p class="text-xs uppercase tracking-widest text-champagne-400 font-medium mt-1">Responsable Financier / Trésorerie</p>
         </div>
 
-        <!-- Responsable Technologies -->
         <div class="border border-champagne-500/30 p-8 bg-bordeaux-950/60 text-center">
           <div class="w-20 h-20 rounded-full border border-champagne-400 mx-auto mb-4 overflow-hidden flex items-center justify-center bg-bordeaux-900">
             <span class="font-serif text-2xl text-champagne-400">FB</span>
@@ -386,7 +398,7 @@
           <p class="text-xs uppercase tracking-widest text-champagne-400 font-medium mt-1">Responsable Technologies</p>
         </div>
 
-        <!-- Communication & Logistique (Loukendy Marseille) -->
+        <!-- Loukendy Marseille (Communication & Logistique) -->
         <div class="border border-champagne-500/30 p-8 bg-bordeaux-950/60 text-center">
           <div class="w-20 h-20 rounded-full border border-champagne-400 mx-auto mb-4 overflow-hidden flex items-center justify-center bg-bordeaux-900">
             <span class="font-serif text-2xl text-champagne-400">LM</span>
@@ -395,7 +407,7 @@
           <p class="text-xs uppercase tracking-widest text-champagne-400 font-medium mt-1">Communication & Logistique</p>
         </div>
 
-        <!-- Responsable Administratif (Davinchi Bazile) -->
+        <!-- Davinchi Bazile (Responsable Administratif) -->
         <div class="border border-champagne-500/30 p-8 bg-bordeaux-950/60 text-center md:col-span-2 lg:col-span-3 max-w-md mx-auto w-full">
           <div class="w-20 h-20 rounded-full border border-champagne-400 mx-auto mb-4 overflow-hidden flex items-center justify-center bg-bordeaux-900">
             <span class="font-serif text-2xl text-champagne-400">DB</span>
@@ -408,21 +420,21 @@
   </section>
   <!-- END: TeamSection -->
 
-  <!-- BEGIN: PricingFormulasSection (Grille Tarifaire Complète) -->
-  <section id="tarifs" class="py-32 bg-bordeaux-800 text-alabaster border-b border-champagne-500/20">
+  <!-- BEGIN: PricingFormulasSection (Strictement les 5 packages officiels demandés) -->
+  <section id="tarifs" class="py-32 bg-bordeaux-800 text-alabaster border-b border-champagne-500/25">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <div class="text-center max-w-3xl mx-auto mb-20">
         <p class="text-xs uppercase tracking-epic font-medium text-champagne-400 mb-2">TRANSPARENCE & GRILLE TARIFAIRE</p>
         <h2 class="font-serif text-4xl sm:text-6xl text-white font-light">Catalogue des Packages Événementiels</h2>
         <div class="w-20 h-[1px] bg-champagne-500/60 mx-auto my-6"></div>
         <p class="text-alabaster/70 text-base font-light">
-          Des prix progressifs en USD selon la capacité d'accueil, garantissant un service d'hôtesses d'accueil et un encadrement sur mesure[cite: 3].
+          Les 5 packages officiels d'Aura Event avec hôtesses et encadrement sur mesure selon le nombre d'invités.
         </p>
       </div>
 
-      <!-- 5 Packages Grid -->
+      <!-- Exact 5 Packages Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        <!-- P1: Essentiel -->
+        <!-- 01. Essentiel -->
         <div class="border border-champagne-500/25 p-8 flex flex-col justify-between bg-bordeaux-950/40">
           <div>
             <span class="text-xs uppercase tracking-widest text-champagne-400 font-medium">Package 01</span>
@@ -441,7 +453,7 @@
           </div>
         </div>
 
-        <!-- P2: Standard -->
+        <!-- 02. Standard -->
         <div class="border border-champagne-500/25 p-8 flex flex-col justify-between bg-bordeaux-950/40">
           <div>
             <span class="text-xs uppercase tracking-widest text-champagne-400 font-medium">Package 02</span>
@@ -451,7 +463,7 @@
               <li>✦ Consultation & coordination générale</li>
               <li>✦ Décoration personnalisée simple</li>
               <li>✦ Espace photo simple</li>
-              <li>✦ 2 hôtesses d'accueil & service traiteur de base</li>
+              <li>✦ 2 hôtesses & service traiteur de base</li>
               <li>✦ Personnel de service & supervision</li>
             </ul>
           </div>
@@ -460,7 +472,7 @@
           </div>
         </div>
 
-        <!-- P3: Confort (Highlighted) -->
+        <!-- 03. Confort -->
         <div class="border-2 border-champagne-400 p-8 flex flex-col justify-between bg-bordeaux-900 relative shadow-2xl">
           <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-champagne-400 text-bordeaux-900 text-[10px] tracking-widest uppercase font-semibold px-3 py-0.5">
             Recommandé
@@ -473,7 +485,7 @@
               <li>✦ Conception du thème & planification complète</li>
               <li>✦ Décoration personnalisée & centres de table</li>
               <li>✦ Espace photo décoré</li>
-              <li>✦ 3 hôtesses d'accueil, service traiteur & serveurs</li>
+              <li>✦ 3 hôtesses, service traiteur & serveurs</li>
               <li>✦ Coordination générale</li>
             </ul>
           </div>
@@ -482,16 +494,16 @@
           </div>
         </div>
 
-        <!-- P4: Premium -->
+        <!-- 04. Premium -->
         <div class="border border-champagne-500/25 p-8 flex flex-col justify-between bg-bordeaux-950/40">
           <div>
             <span class="text-xs uppercase tracking-widest text-champagne-400 font-medium">Package 04</span>
             <h3 class="font-serif text-2xl text-white mt-1 mb-2">Premium</h3>
             <p class="text-xs text-champagne-300 uppercase tracking-wider mb-4">De 81 à 120 invités • 1 400 USD</p>
             <ul class="space-y-3 text-xs tracking-wider text-alabaster/80 font-light border-t border-champagne-500/20 pt-4">
-              <li>✦ Conception du concept & décoration raffinée</li>
+              <li>✦ Conception du concept & déco raffinée</li>
               <li>✦ Espace photo personnalisé & tapis rouge</li>
-              <li>✦ 4 hôtesses d'accueil & service traiteur / cocktails</li>
+              <li>✦ 4 hôtesses & service traiteur / cocktails</li>
               <li>✦ Serveurs & coordination des prestataires</li>
               <li>✦ Supervision complète</li>
             </ul>
@@ -501,7 +513,7 @@
           </div>
         </div>
 
-        <!-- P5: Prestige -->
+        <!-- 05. Prestige -->
         <div class="border border-champagne-500/25 p-8 flex flex-col justify-between bg-bordeaux-950/40 md:col-span-2 lg:col-span-2">
           <div>
             <span class="text-xs uppercase tracking-widest text-champagne-400 font-medium">Package 05</span>
@@ -511,7 +523,7 @@
               <li>✦ Planification intégrale & direction artistique</li>
               <li>✦ Décoration haut de gamme & espace VIP</li>
               <li>✦ Tapis rouge & 5 hôtesses d'accueil</li>
-              <li>✦ Service traiteur, cocktails, serveurs</li>
+              <li>✦ Service traiteur, cocktails & serveurs</li>
               <li>✦ Gestion complète du protocole & supervision jour J</li>
             </ul>
           </div>
@@ -542,14 +554,14 @@
           <div>
             <p class="text-xs uppercase tracking-epic font-medium text-champagne-400 mb-2">CONTACT & COLLABORATION</p>
             <h2 class="font-serif text-3xl sm:text-4xl font-light text-white leading-tight">
-              Confiez-nous votre vision, nous la transformerons en succès éclatant[cite: 40].
+              Confiez-nous votre vision, nous la transformerons en succès éclatant.
             </h2>
           </div>
 
           <div class="space-y-6 text-sm text-alabaster/80 font-light">
-            <p>📍 Jacmel, Haïti (Sur rendez-vous)[cite: 40]</p>
-            <p>📞 +509 31 33 2806 / +509 47 99 3315[cite: 40]</p>
-            <p>✉️ eventaura64@gmail.com[cite: 40]</p>
+            <p>📍 Jacmel, Haïti (Sur rendez-vous)</p>
+            <p>📞 +509 31 33 2806 / +509 47 99 3315</p>
+            <p>✉️ eventaura64@gmail.com</p>
           </div>
 
           <div class="border border-champagne-500/30 p-6 bg-bordeaux-900/60">
@@ -624,6 +636,21 @@
               const text = `Bonjour Aura Event,%0AJe souhaite réserver / obtenir un devis :%0A- Nom : ${name}%0A- Téléphone : ${phone}%0A- Package : ${pkg}%0A- Lieu : ${loc}%0A- Détails : ${msg}`;
               window.open(`https://wa.me/50931332806?text=${text}`, '_blank');
             }
+
+            // Script pour animer les ticks du slider selon le scroll
+            function scrollToSection(id, num) {
+              document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+              document.getElementById('current-slide-num').innerText = '0' + num;
+              
+              const ticks = document.querySelectorAll('.slider-tick');
+              ticks.forEach((t, i) => {
+                if (i === (num - 1)) {
+                  t.classList.add('active');
+                } else {
+                  t.classList.remove('active');
+                }
+              });
+            }
           </script>
         </div>
 
@@ -633,17 +660,17 @@
   <!-- END: MethodologyAndContactSection -->
 </main>
 
-<!-- BEGIN: MainFooter -->
+<!-- BEGIN: MainFooter avec Logo Visible -->
 <footer class="bg-bordeaux-950 hairline-t border-champagne-500/30 py-16">
   <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-12 hairline-b border-champagne-500/20">
       <div class="flex items-center space-x-4">
-        <div class="w-10 h-10 rounded-full border border-champagne-400 flex items-center justify-center bg-bordeaux-900 overflow-hidden">
-          <span class="font-serif text-sm tracking-widest text-champagne-400">AE</span>
+        <div class="w-12 h-12 rounded-full border border-champagne-400 flex items-center justify-center bg-bordeaux-900 overflow-hidden shadow-md">
+          <span class="font-serif text-xs font-bold text-champagne-400 tracking-wider">AURA</span>
         </div>
         <div>
-          <span class="font-serif text-lg tracking-widest text-white uppercase block">Aura Event</span>
-          <span class="text-[10px] uppercase tracking-widest text-alabaster/60 font-light">Une expertise au service de vos événements[cite: 31]</span>
+          <span class="font-serif text-lg tracking-widest text-white uppercase block">AURA EVENT</span>
+          <span class="text-[10px] uppercase tracking-widest text-alabaster/60 font-light">Une expertise au service de vos événements</span>
         </div>
       </div>
 
